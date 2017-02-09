@@ -7,7 +7,9 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.net.URL;
 import java.util.Random;
+
 //import java.util.Timer;
 //import java.util.TimerTask;
 
@@ -28,9 +30,10 @@ public class SwimmyFish extends Applet implements Runnable, KeyListener{
 		this.addKeyListener(this);
 		tube = new Tube();
 		
-		SwimmyFish = getImage(getDocumentBase(), "SwimmyFish1.png");
-		TubeTop = getImage(getDocumentBase(), "TubeTop.png");
-		TubeBottom = getImage(getDocumentBase(), "TubeBottom.png");
+//		SwimmyFish = getImage(getDocumentBase(), "SwimmyFish1.png");
+		SwimmyFish = getImage(getClass().getResource("/Resources/SwimmyFish1.png"));
+		TubeTop = getImage(getClass().getResource("/Resources/TubeTop.png"));
+		TubeBottom = getImage(getClass().getResource("/Resources/TubeBottom.png"));
 		
 //		clock = new Timer();
 		
@@ -136,9 +139,9 @@ public class SwimmyFish extends Applet implements Runnable, KeyListener{
 		/* JRF - MOVE THE FISH TAIL VERSION 2 - PREVIOUS VERSION TOO TAXING??? */
 		if (fishAlive){
 			if (tube.tubeX % 3 == 0){
-				SwimmyFish = getImage(getDocumentBase(), "SwimmyFish2.png");
+				SwimmyFish = getImage(getClass().getResource("/Resources/SwimmyFish2.png"));
 			} else {
-				SwimmyFish = getImage(getDocumentBase(), "SwimmyFish1.png");
+				SwimmyFish = getImage(getClass().getResource("/Resources/SwimmyFish1.png"));
 			}
 		}
 	}
